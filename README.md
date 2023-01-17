@@ -28,10 +28,14 @@ Things you may want to cover:
 ## users テーブル
 | Column             | Type    | Options             |
 | ------------------ | ------  | -----------         |
-| email              | string  | null: false, UNIQUE |
+| nickname           | string  | null: false         |
+| email              | string  | null: false         |
 | encrypted_password | string  | null: false         |
-| name               | string  | null: false         |
-| birthday           | integer | null: false         |
+| last_name          | string  | null: false         |
+| first_name         | string  | null: false         |
+| last_name_kana     | string  | null: false         |
+| first_name_kana    | string  | null: false         |
+| date               | integer | null: false         |
 
 ## アソシエーション
 has_many :items
