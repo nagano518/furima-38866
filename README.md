@@ -57,6 +57,7 @@ belongs_to :status
 belongs_to :delivery_charge
 belongs_to :area
 belongs_to :shipping_date
+has_one :purchase
 
 ## categories テーブル
 | Column             | Type       | Options                        |
@@ -112,3 +113,25 @@ has_many :items
 ## ActiveHashを利用する
 include ActiveHash::Associations
 has_many :items
+
+## purchases テーブル
+| Column             | Type       | Options                        |
+| ------------------ | ------     | -----------                    |
+| item               | references | null: false, foreign_key: true |
+
+## アソシエーション
+belongs_to :item
+has_one :address
+
+## addresses テーブル
+| Column             | Type       | Options                        |
+| ------------------ | ------     | -----------                    |
+| postal_code        | integer    | null: false                    |
+| prefectures        | string     | null: false                    |
+| Municipality       | string     | null: false                    |
+| address            | integer    | null: false                    |
+| building_name      | string     | null: false                    |
+| telephone_number   | integer    | null: false                    |
+
+## アソシエーション
+belongs_to :address
