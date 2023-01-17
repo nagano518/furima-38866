@@ -43,7 +43,8 @@ has_many :items
 ## items テーブル
 | Column             | Type       | Options                        |
 | ------------------ | ------     | -----------                    |
-| item_name          | string     | null: false                    |
+| name               | string     | null: false                    |
+| content            | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
 | delivery_charge_id | integer    | null: false                    |
