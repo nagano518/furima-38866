@@ -39,7 +39,7 @@ Things you may want to cover:
 
 ## アソシエーション
 has_many :items
-has_one :purchase
+has_many :purchases
 
 ## items テーブル
 | Column             | Type       | Options                        |
