@@ -65,62 +65,17 @@ belongs_to :delivery_charge
 belongs_to :area
 belongs_to :shipping_date
 
-
-## categories テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| id                 | integer    | null: false                    |
-| category           | string     | null: false                    |
-
-## アソシエーション
-## ActiveHashを利用する
+## category~shipping_dateはモデル作成のみ（テーブルは作成しない）
+## category, statuse, delivery_charge, shipping_dateのモデルに下記を記載
+## ActiveHashを利用
 include ActiveHash::Associations
 has_many :items
 
-## statuses テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| id                 | integer    | null: false                    |
-| status             | string     | null: false                    |
-
-## アソシエーション
-## ActiveHashを利用する
-include ActiveHash::Associations
-has_many :items
-
-## delivery_charges テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| id                 | integer    | null: false                    |
-| delivery_charge    | string     | null: false                    |
-
-## アソシエーション
-## ActiveHashを利用する
-include ActiveHash::Associations
-has_many :items
-
-## areas テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| id                 | integer    | null: false                    |
-| area               | string     | null: false                    |
-
-## アソシエーション
+## areaモデルは下記を記載
 ## ActiveHashを利用する
 include ActiveHash::Associations
 has_many :items
 has_many :address
-
-## shipping_dates テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| id                 | integer    | null: false                    |
-| shipping_date      | string     | null: false                    |
-
-## アソシエーション
-## ActiveHashを利用する
-include ActiveHash::Associations
-has_many :items
 
 ## purchases テーブル
 | Column             | Type       | Options                        |
