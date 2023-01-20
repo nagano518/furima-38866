@@ -66,7 +66,7 @@ belongs_to :area
 belongs_to :shipping_date
 
 ## category~shipping_dateはモデル作成のみ（テーブルは作成しない）
-## category, statuse, delivery_charge, shipping_dateのモデルに下記を記載
+## category, statuses, delivery_charge, shipping_dateのモデルに下記を記載
 ## ActiveHashを利用
 include ActiveHash::Associations
 has_many :items
