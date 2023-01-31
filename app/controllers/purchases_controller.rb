@@ -7,7 +7,6 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    binding.pry
     @form_object = FormObject.new(object_params)
     if @form_object.valid?
       @form_object.save
