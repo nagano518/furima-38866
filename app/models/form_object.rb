@@ -1,6 +1,6 @@
 class FormObject
   include ActiveModel::Model
-  attr_accessor :item_id, :user_id, :postal_code, :area_id, :municipality, :address, :building_name, :telephone_number, :purchase_id 
+  attr_accessor :item_id, :user_id, :postal_code, :area_id, :municipality, :address, :building_name, :telephone_number, :purchase_id, :token 
 
   validates :item_id, presence: true
   validates :user_id, presence: true
@@ -10,6 +10,7 @@ class FormObject
   validates :address, presence: true
   validate :building_name
   validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
+  validates :token, presence: true
 
 
   def save
