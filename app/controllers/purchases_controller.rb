@@ -1,9 +1,9 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :user_choice, only: [:index, :create]
+  before_action :set_item, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @form_object = FormObject.new
   end
 
@@ -14,7 +14,6 @@ class PurchasesController < ApplicationController
       @form_object.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
       render :index
     end
   end
@@ -39,5 +38,9 @@ class PurchasesController < ApplicationController
     elsif Item.find(params[:item_id]).purchase.present?
       redirect_to root_path
     end
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
