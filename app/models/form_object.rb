@@ -10,7 +10,7 @@ class FormObject
     validates :municipality
     validates :address
     validates :telephone_number, format: { with: /\A\d{10,11}\z/ }
-    validates :token, 
+    validates :token
   end
 
   def save
