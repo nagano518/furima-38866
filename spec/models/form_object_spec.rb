@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe FormObject, type: :model do
   before do
-    @form = FactoryBot.build(:form_object)
+    item = FactoryBot.create(:item)
+    user = FactoryBot.create(:user)
+    @form = FactoryBot.build(:form_object, item_id: item.id, user_id: user.id)
+    sleep 0.1
   end
 
   describe '商品購入情報の保存' do
