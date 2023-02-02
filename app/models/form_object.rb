@@ -8,7 +8,6 @@ class FormObject
   validates :area_id, presence: true, numericality: { other_than: 1 ,message: "can't be blank"}
   validates :municipality, presence: true
   validates :address, presence: true
-  validate :building_name
   validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
   validates :token, presence: true
 
